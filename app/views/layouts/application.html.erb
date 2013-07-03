@@ -3,13 +3,14 @@
 <head>
   <title>AlaCon |  <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDbC3kdthrkHEEAgPn2IaBzIU0MmPoeOsA&sensor=true" %>
   <%= javascript_include_tag "application" %>
+   <%= javascript_include_tag "google" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
-
+	<%= render "layouts/header"%>
+	<%= yield %>
+	<%= render "layouts/footer"%>
 </body>
 </html>

@@ -1,0 +1,15 @@
+<script type="text/javascript">
+function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(30,-30),
+          zoom: 3,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+<div class="container" id="map">  </div>
