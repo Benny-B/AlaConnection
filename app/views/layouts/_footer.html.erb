@@ -9,5 +9,8 @@
 			<li> <a href="*">News</a></li>
 		</ul>
 	</nav>
-	<%= link_to image_tag("ala.jpeg", :alt => "ALA" ), 'http://africanleadershipacademy.org/', :class =>         "alaimg"   %>
+	<%= link_to image_tag("ala.jpeg", :alt => "ALA" ), 'http://africanleadershipacademy.org/', :class => "alaimg"%>
+	<%= form_for(@user, :html =>{ :style => ""}) do |f| %>
+	<%= f.text_field :latitude, :id => "form1" %><%= f.text_field :longitude, :id => "form2" %>
+	<%end%>
 </footer>
