@@ -1,11 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 		<div class="container">
-			<%= link_to "ALACon", "/", id: "logo" %>
+			<%= link_to "ALACon", current_user, id: "logo" %>
 			<nav>
 				<ul class="nav pull-right">
-					<li><%= link_to "Home",   "/"    %>  </li>
-					<li><%= link_to "About",   "/"   %>  </li>
+					<li><%= link_to "Home",   current_user    %>  </li>
+					<li><%= link_to "About",   "/about"   %>  </li>
 				<% if signed_in? %>
 					<li id="fat-menu" class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">

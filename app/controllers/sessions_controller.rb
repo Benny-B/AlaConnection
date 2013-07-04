@@ -5,6 +5,10 @@ class SessionsController < ApplicationController
 
 		end
 
+		 def show
+  			@user = User.find(params[:id]) 
+  		end
+
 		def create
 			@user = User.find_by_email(params[:session][:email].downcase)
 			@password = params[:session][:password]
