@@ -1,14 +1,14 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  attr_accessible :education, :email, :firstname, :lastname,:password_confirmation, :password
+  attr_accessible :education, :email, :firstname, :lastname,:password_confirmation, :password, :latitude, :longitude
   attr_accessor :password_confirmation, :password
 
 
   validates_confirmation_of :password, :if => :password_changed?
   before_save { |user| user.email = email.downcase }
   before_save :hash_password, :if => :password_changed?
- # before_save :ala_confirm
+  before_save :create_remember_token            
 
   validates :firstname, :presence => true
   validates :lastname, :presence => true
@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
   private
   	def hash_password
   		self.hashed_password = BCrypt::Password.create(@password)
+  	end
+
+  	def create_remember_token
+  		self.remember_token = SecureRandom.base64
   	end
 
 end

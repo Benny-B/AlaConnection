@@ -1,6 +1,11 @@
 <% provide(:title, "Sign Up!") %>
+<div class="container" id="maincontainer">
 <h1> Sign Up! </h1>
-<div class="row">
+<% flash.each do|key, value| %>
+		<div class="alert alert-<%= key %>"> <%= value %> </div>
+	<%end%>
+<div class="signup">
+<div class="row" >
 	<div class="span6 offset3">
 		<%= render "shared/error_messages" %>
 		<%= form_for(@user) do |f| %>
@@ -27,6 +32,6 @@
 			<%end%>
 		</div>
 	</div>
-
-
+</div>
+</div>
 

@@ -9,7 +9,9 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
 
   	if @user.save 
-  		#signin
+  		sign_in @user
+  		flash[:succes] = "Welcome to ALAcon"
+  		redirect_to @user
   	else
   		render :action => "new"
   	end
@@ -19,8 +21,17 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id]) 
   end
 
+  def update
+  	@user = User.find(params[:id]);
+  	@user.latitude = params[:user][:latitude]
+  	@user.longitude = params[:user][:longitude]
 
-
-
-
+  	if @user.save
+  		flash[:success] = "Profile updated"
+  		sign_in @user
+  		redirect_to @user
+  	else
+  		redirect_to "/"
+  	end
+  end
 end

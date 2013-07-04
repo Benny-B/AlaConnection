@@ -1,11 +1,9 @@
-
 <script type="text/javascript">
 var map;
 var worldcenter = new google.maps.LatLng(30,-30);
 var latitude;
 var longitude;
 var pos;
-var tmp = 2;
 
 function initialize() {
   var mapOptions = {
@@ -23,18 +21,21 @@ map.setCenter(worldcenter)
       latitude = pos.lat();
       longitude = pos.lng();
       var f1 = document.getElementById("form1");
-	var f2 = document.getElementById("form2");
+	  var f2 = document.getElementById("form2");
+	  form = document.getElementById("form");
 
 	f1.value = latitude;
 	f2.value = longitude;
+	
+	//document.forms[0].submit()
 
-    /*  var infowindow = new google.maps.InfoWindow({
+     /* var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
         content: 'Location found using HTML5.'
       });*/
 
-      //map.setCenter(pos);
+     // map.setCenter(pos);
     }, function() {
       handleNoGeolocation(true);
     });
@@ -61,8 +62,15 @@ function handleNoGeolocation(errorFlag) {
   //map.setCenter(options.position);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
-<div class="container" id="map">  </div>
-<%= form_for(@user, :html =>{ :style => "display:hidden;visibility:hidden"}) do |f| %>
+
+	<div class="container" id="map"> 
+<% flash.each do|key, value| %>
+<div class="alert alert-<%= key %>"> <%= value %> </div>
+<%end%>
+	</div>
+<%= form_for(@user, :html =>{ :style => ""}, :id =>"form") do |f| %>
 <%= f.text_field :latitude, :id => "form1" %><%= f.text_field :longitude, :id => "form2" %>
+<%= f.submit "s", :id=>"form1" %>
 <%end%>

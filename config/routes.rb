@@ -13,6 +13,7 @@ AlaCon::Application.routes.draw do
   match '/signup' => 'users#new'
   match '/signin' => 'sessions#new'
   match '/' => 'static_pages#home'
+  match '/signout' => 'sessions#destroy'
 
 
   # The priority is based upon order of creation:

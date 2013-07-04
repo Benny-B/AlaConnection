@@ -10,21 +10,22 @@ class SessionsController < ApplicationController
 			@password = params[:session][:password]
 			if @user
 				if BCrypt::Password.new(@user.hashed_password).is_password?@password
-				#sign_in
+				sign_in @user
 				redirect_to @user
 				else
-					#flash.now[:error] = "Invalid email/password"
+					flash.now[:error] = "Invalid email/password"
 					render :action => "new"
 				end
 			else
-				#flash.now[:error] = "Invalid email/password"
+				flash.now[:error] = "Invalid email/password"
 				render :action => "new"
 			end
 
 		end
 
 		def destroy
-
+			sign_out
+			redirect_to "/"
 		end
 
 end

@@ -13,7 +13,7 @@ html {
 
 body {
   padding-top: 60px;
-  height: 100%; margin: 0; padding: 0
+  height: 100%; margin: 0; padding: 0;
 }
 
 section {
@@ -105,6 +105,28 @@ p {
   margin-left: 100px;
 }
 
+#maincontainer
+{
+  margin-top : 50px;
+}
+
+.off
+{
+  height: 300px;
+}
+
+#welcome p
+{
+  font-size: 4em;
+  letter-spacing: -2px;
+ 
+}
+
+.hero-unit
+{
+  margin-top: 200px
+}
+
 #map
 {
   width: 400px;
@@ -120,6 +142,7 @@ p {
 {
  // height: 1px;
 }
+
 
 #form
 {
