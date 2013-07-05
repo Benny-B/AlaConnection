@@ -30,7 +30,7 @@ map.setCenter(worldcenter)
  var f1tmp = <%=@user.latitude%>
   var f2tmp = <%=@user.longitude%>
 
- if( (f1tmp == null && f2tmp == null) )
+ if( (f1tmp == 0 && f2tmp == 0) )
   {
     document.forms[0].submit();
   }
@@ -54,7 +54,7 @@ map.setCenter(worldcenter)
         content: 'Location found using HTML5.'
       });*/
                 
-         infoBubble2 = new InfoBubble({
+        /* infoBubble2 = new InfoBubble({
           map: map,
           content: '<div class="phoneytext">Some label.Location found using HTML5.</div>',
           position: pos,
@@ -71,10 +71,19 @@ map.setCenter(worldcenter)
           arrowPosition: 30,
   
           arrowStyle: 2
-        });
+        });*/
 
+ <% @users.each do |u| %>
+var la = <%=u.latitude%>;
+var lon = <%=u.longitude%>;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: new google.maps.LatLng(la, lon),
+          draggable: false
+        });
+  <% end %>
      
-        infoBubble2.open();
+      //  infoBubble2.open();
      // map.setCenter(pos);
     }, function() {
       handleNoGeolocation(true);
@@ -92,16 +101,9 @@ function handleNoGeolocation(errorFlag) {
     var content = 'Error: Your browser doesn\'t support geolocation.';
   }
 
- /* var options = {
-    map: map,
-    position: new google.maps.LatLng(60, 105),
-    content: content
-  };
-
-  var infowindow = new google.maps.InfoWindow(options);*/
-  //map.setCenter(options.position);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
 
 </script>
 
