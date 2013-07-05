@@ -26,66 +26,45 @@ map.setCenter(worldcenter)
 
 	f1.value = latitude;
 	f2.value = longitude;
-	
- var f1tmp = <%=@user.latitude%>
-  var f2tmp = <%=@user.longitude%>
 
- if( (f1tmp == null && f2tmp == null) )
+  var nf1 = f1.value;
+  var nf2 = f2.value;
+
+  
+
+//alert(f2tmp);
+//|| 
+  if( (f1tmp == null && f2tmp == null) )
   {
     document.forms[0].submit();
   }
-	
 
-  /*if(localStorage.getItem('loadedOnce') === 'true')
+/*  else if(localStorage.getItem('loadedOnce') === 'true')
   {
        localStorage.removeItem('loadedOnce');
-       document.forms[0].submit();
   }
   else
   {
     localStorage.setItem('loadedOnce', 'true');
     document.location.reload(true);
-  }*/
+  }
 
-       /*  var infowindow = new google.maps.InfoWindow({
+  else if ( nf1 > f1tmp+7 || nf1 < f1tmp-7 ) 
+  {
+    document.forms[0].submit();
+  }
+
+  else if (nf2 > f2tmp+7 || nf2 < f2tmp-7 ) 
+  {
+    document.forms[0].submit();
+  }*/
+  
+
+     /* var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        maxWidth: 200,
         content: 'Location found using HTML5.'
       });*/
-
-                var marker = new google.maps.Marker({
-         map: map,
-         draggable: true,
-         position: pos,
-         visible: true
-        });
-                
-        var boxText = document.createElement("div");
-        boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
-        boxText.innerHTML = "City Hall, Sechelt<br>British Columbia<br>Canada";
-                
-        var myOptions = {
-                 content: boxText
-                ,disableAutoPan: false
-                ,maxWidth: 0
-                ,pixelOffset: new google.maps.Size(-140, 0)
-                ,zIndex: null
-                ,boxStyle: { 
-                  background: "url('tipbox.gif') no-repeat"
-                  ,opacity: 0.75
-                  ,width: "280px"
-                 }
-                ,closeBoxMargin: "10px 2px 2px 2px"
-                ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
-                ,infoBoxClearance: new google.maps.Size(1, 1)
-                ,isHidden: false
-                ,pane: "floatPane"
-                ,enableEventPropagation: false
-        };
-
-        var ib = new InfoBox(myOptions);
-        ib.open(map, marker);
 
      // map.setCenter(pos);
     }, function() {

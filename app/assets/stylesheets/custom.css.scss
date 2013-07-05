@@ -110,6 +110,9 @@ p {
   margin-top : 50px;
 }
 
+#map label { width: auto; display:inline; }
+#map img { max-width: none; }
+
 .off
 {
   height: 300px;
