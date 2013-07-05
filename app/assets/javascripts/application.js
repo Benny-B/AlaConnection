@@ -15,4 +15,4 @@
 //= require bootstrap
 //= require_tree .
 //= require google.js
-//= require infobox.js
+//= require infobubble.js
