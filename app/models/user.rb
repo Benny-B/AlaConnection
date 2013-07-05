@@ -4,17 +4,19 @@ class User < ActiveRecord::Base
   attr_accessible :education, :email, :firstname, :lastname,:password_confirmation, :password, :latitude, :longitude
   attr_accessor :password_confirmation, :password
 
-  
+
+ before_save :hash_password, :if => :password_changed?
+ before_save :create_remember_token  
+  if !@latitude.nil? && !@longitude.nil?
   validates_confirmation_of :password, :if => :password_changed?
   before_save { |user| user.email = email.downcase }
-  before_save :hash_password, :if => :password_changed?
-  before_save :create_remember_token            
+           
  
   validates :firstname, :presence => true
   validates :lastname, :presence => true
   validates :email, :presence => true, :uniqueness => {:case_sensitive => false}#, :ala_confirm => true
   validate :ala_confirm 
-  if !@latitude.nil?
+  
   validates :password, :presence => true
   validates :password_confirmation, :presence => true
   end

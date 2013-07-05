@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   	if @user.save
   		flash[:success] = "Profile updated"
-  		#sign_in @user
+  		sign_in @user
   		redirect_to @user
   	else
   		Rails.logger.info(@user.errors.messages.inspect)
