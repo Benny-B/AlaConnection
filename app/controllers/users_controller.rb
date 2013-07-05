@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
+
   def create
   	@user = User.new(params[:user])
 
@@ -56,5 +57,7 @@ class UsersController < ApplicationController
   			redirect_to "/"
   		end
   	end
+
+
 
 end
