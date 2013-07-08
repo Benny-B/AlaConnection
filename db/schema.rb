@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704102140) do
+ActiveRecord::Schema.define(:version => 20130708090938) do
 
   create_table "users", :force => true do |t|
     t.string   "firstname"
@@ -19,11 +19,15 @@ ActiveRecord::Schema.define(:version => 20130704102140) do
     t.string   "email"
     t.string   "hashed_password"
     t.string   "education"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.integer  "latitude"
     t.integer  "longitude"
     t.string   "remember_token"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

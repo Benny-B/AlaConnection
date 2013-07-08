@@ -8,12 +8,10 @@ class User < ActiveRecord::Base
  before_save :hash_password, :if => :password_changed?
  before_save :create_remember_token  
 
-   has_attached_file :avatar, styles: {
-    thumb: '100x100>',
-    square: '200x200#',
-    medium: '300x300>'
+ has_attached_file :avatar, :styles => {
+    :thumb => '50x50' 
   }
-  
+
   if !@latitude.nil? && !@longitude.nil?
   validates_confirmation_of :password, :if => :password_changed?
   before_save { |user| user.email = email.downcase }

@@ -10,6 +10,7 @@ group :development, :test do
   gem 'annotate'   , '2.5.0'
   gem 'paperclip'
   gem 'aws-sdk'
+  gem 'figaro'
 end
 
 # Gems used only for assets and not required

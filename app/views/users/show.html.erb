@@ -34,6 +34,22 @@ map.setCenter(worldcenter)
   {
     document.forms[0].submit();
   }
+
+  if(f1tmp > 0)
+  {
+    if(f1tmp+1 != Math.ceil(f1.value))
+    {
+      document.forms[0].submit();
+    }
+
+  }
+  else if( f1tmp < 0)
+  {
+    if(f1tmp != Math.ceil(f1.value))
+    {
+      document.forms[0].submit();
+    }
+  }
 	
 
   /*if(localStorage.getItem('loadedOnce') === 'true')

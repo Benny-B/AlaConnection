@@ -2,7 +2,7 @@
 		<div class="navbar-inner">
 		<div class="container">
 			<% if signed_in? %>
-				<%= link_to image_tag("rails.png", :alt => "user" ), edit_user_path(current_user), :class => "gravatar"%>
+				<%= link_to image_tag(current_user.avatar.url(), :alt => "user" ), edit_user_path(current_user), :class => "gravatar"%>
 			<% end %>
 			<%= link_to "ALACon", current_user, id: "logo" %>
 			<nav>

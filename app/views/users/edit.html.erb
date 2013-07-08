@@ -1,8 +1,30 @@
 <% provide(:title, "Edit profile") %>
 <div class="container" id="maincontainer">
 <%= form_for(@user) do |f| %>
-<%= f.label :avatar %>
-<%= f.file_field :avatar %>
-<%= f.submit "submit", :class => 'btn btn-large btn-primary' %>
+			<%= f.label :firstname  %>
+			<%= f.text_field :firstname  %></br>
+
+			<%= f.label :lastname  %>
+			<%= f.text_field :lastname  %></br>
+
+			<%= f.label :email  %>
+			<%= f.text_field :email  %></br>
+
+			<%= f.label :education  %>
+			<%= f.text_field :education  %></br>
+
+			<%= f.label :password  %>
+			<%= f.password_field :password  %></br>
+
+			<%= f.label :password_confirmation  %>
+			<%= f.password_field :password_confirmation  %></br>
+
+			<%= f.label :avatar %><%= f.file_field :avatar %></br>
+			
+			<%= f.submit "submit", :class => 'btn btn-large btn-primary' %> </br>
+
+			<%= f.text_field :latitude, :value => "0", :id => "form1" %>
+			<%= f.text_field :longitude,:value => "0", :id => "form2" %>
+
 <% end %>
 </div>

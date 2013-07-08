@@ -7,6 +7,9 @@ development:
   adapter: sqlite3
   database: db/development.sqlite3
   pool: 5
+  access_key_id: AKIAIIQ5DXRT4CGFVWHA
+  secret_access_key: 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
+
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
@@ -16,10 +19,14 @@ test:
   adapter: sqlite3
   database: db/test.sqlite3
   pool: 5
+  access_key_id: AKIAIIQ5DXRT4CGFVWHA
+  secret_access_key: 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
   timeout: 5000
 
 production:
   adapter: sqlite3
   database: db/production.sqlite3
   pool: 5
+  access_key_id: AKIAIIQ5DXRT4CGFVWHA
+  secret_access_key: 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
   timeout: 5000

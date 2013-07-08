@@ -33,16 +33,23 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	@user.latitude = params[:user][:latitude]
   	@user.longitude = params[:user][:longitude]
-  
 
-  	if @user.save
-  		flash[:success] = "Profile updated"
-  		sign_in @user
-  		redirect_to @user
+  	if(params[:user][:firstname] == "" && params[:user][:lastname] == "")
+  		if @user.save
+  			sign_in @user
+  			redirect_to @user
+  		else
+  			redirect_to "/"
+  		end
   	else
-  		Rails.logger.info(@user.errors.messages.inspect)
-  		redirect_to "/"
+  		if @user.update_attributes(params[:user])
+  			sign_in @user
+  			redirect_to @user
+  		else
+  			redirect_to "/"
+  		end
   	end
+  
   end
 
 
