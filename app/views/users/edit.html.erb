@@ -1,0 +1,8 @@
+<% provide(:title, "Edit profile") %>
+<div class="container" id="maincontainer">
+<%= form_for(@user) do |f| %>
+<%= f.label :avatar %>
+<%= f.file_field :avatar %>
+<%= f.submit "submit", :class => 'btn btn-large btn-primary' %>
+<% end %>
+</div>

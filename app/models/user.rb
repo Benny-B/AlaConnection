@@ -1,12 +1,19 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  attr_accessible :education, :email, :firstname, :lastname,:password_confirmation, :password, :latitude, :longitude
+  attr_accessible :education, :email,:avatar, :firstname, :lastname,:password_confirmation, :password, :latitude, :longitude
   attr_accessor :password_confirmation, :password
 
 
  before_save :hash_password, :if => :password_changed?
  before_save :create_remember_token  
+
+   has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
+  
   if !@latitude.nil? && !@longitude.nil?
   validates_confirmation_of :password, :if => :password_changed?
   before_save { |user| user.email = email.downcase }
