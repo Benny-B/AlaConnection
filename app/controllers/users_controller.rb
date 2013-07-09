@@ -34,21 +34,14 @@ class UsersController < ApplicationController
   	@user.latitude = params[:user][:latitude]
   	@user.longitude = params[:user][:longitude]
 
-  	if(params[:user][:firstname] == "" && params[:user][:lastname] == "")
-  		if @user.save
-  			sign_in @user
-  			redirect_to @user
-  		else
-  			redirect_to "/"
-  		end
+  
+  	if @user.update_attributes(params[:user])
+  		sign_in @user
+  		redirect_to @user
   	else
-  		if @user.update_attributes(params[:user])
-  			sign_in @user
-  			redirect_to @user
-  		else
-  			redirect_to "/"
-  		end
+  		redirect_to "/"
   	end
+  
   
   end
 

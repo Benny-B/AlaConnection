@@ -11,6 +11,7 @@ group :development, :test do
   gem 'paperclip'
   gem 'aws-sdk'
   gem 'figaro'
+  gem 'rmagick'
 end
 
 # Gems used only for assets and not required

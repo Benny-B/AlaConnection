@@ -1,5 +1,5 @@
 require 'bcrypt'
-
+#require 'imagemagick'
 class User < ActiveRecord::Base
   attr_accessible :education, :email,:avatar, :firstname, :lastname,:password_confirmation, :password, :latitude, :longitude
   attr_accessor :password_confirmation, :password
@@ -8,9 +8,7 @@ class User < ActiveRecord::Base
  before_save :hash_password, :if => :password_changed?
  before_save :create_remember_token  
 
- has_attached_file :avatar, :styles => {
-    :thumb => '50x50' 
-  }
+ has_attached_file :avatar#,  :styles => { :thumb => {:geometry => "100x100>"}}
 
   if !@latitude.nil? && !@longitude.nil?
   validates_confirmation_of :password, :if => :password_changed?
