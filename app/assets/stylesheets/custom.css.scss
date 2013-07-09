@@ -139,6 +139,13 @@ p {
   width: 70px;
   border: 5px solid grey;
 }
+//added a thumbnail class to edit the image so that it stays small
+.thumbnail
+{
+  max-height:10%;
+  max-width:10%;
+  overflow:hidden;
+}
 
 #welcome p
 {
