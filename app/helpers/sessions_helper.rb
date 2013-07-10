@@ -26,4 +26,11 @@ def sign_out
 	cookies.delete(:remember_token)
 end
 
+def signed_in_user
+  	unless signed_in?
+  		redirect_to "/signin"
+  		flash[:notice] = "Please, sign in"
+  	end
+ end
+
 end

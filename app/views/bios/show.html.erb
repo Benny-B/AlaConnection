@@ -7,6 +7,10 @@ alert(area.innerText);
 
 </script>
 <h1> My Biography </h1>
-<div class="container"> 
+<div class="container">
+	<% if @bio.content %>
 	<div id="myarea"><%=@bio.content%></div>
+	<% else %>
+	<div id="myarea"><h1>Edit/show a new Bio </h1></div>
+	<%end%>
 </div>
