@@ -1,4 +1,7 @@
 <% provide(:title, "Edit profile") %>
+<% lat = @user.latitude%>
+<% lon = @user.longitude%>
+
 <div class="container" id="maincontainer">
 <%= form_for(@user) do |f| %>
 			<%= f.label :firstname  %>
@@ -23,8 +26,8 @@
 			
 			<%= f.submit "submit", :class => 'btn btn-large btn-primary' %> </br>
 
-			<%= f.text_field :latitude, :value => "0", :id => "form1" %>
-			<%= f.text_field :longitude,:value => "0", :id => "form2" %>
+			<%= f.text_field :latitude, :value => lat, :id => "form1" %>
+			<%= f.text_field :longitude,:value => lon, :id => "form2" %>
 
 <% end %>
 </div>

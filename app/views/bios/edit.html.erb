@@ -1,0 +1,17 @@
+
+
+<% provide(:title, "Bio!") %>
+<div class="container" id="maincontainer"><%= form_for(@bio) do |f| %>
+	<h1> Edit Your Biography! </h1>
+	<div class="row" >
+		<div class="span6 offset3">
+ 			 <div class="field">
+   				 <%= f.text_area :content, :placeholder => "Compose new bio...", :id => "myarea" %>
+   				  
+  			</div>
+  			<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  		</div>
+  	</div>
+  	<% end %>
+  </div>
+
