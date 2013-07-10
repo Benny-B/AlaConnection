@@ -29,7 +29,22 @@
 							<li><%= link_to "Edit", edit_bio_path(current_user) %>
 						</ul>
 					 </li>
-					<li><%= link_to "My CV",   "#"   %>  </li>
+				
+					<li id="fat-menu" class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Resume <b class="caret"></b>
+						</a> 
+						<ul class="dropdown-menu" id="dropdown-menu2">
+							<li><%= link_to "Show", "#"%>
+							<li><%= link_to "Edit", "#" %>
+						</ul>
+					 </li>
+
+
+
+
+
+
 					<li><%= link_to "My Projects",   "#"   %>  </li>
 					<li><%= link_to "Sign out", '/signout', :method => "destroy" %></li>
 				<% else %>

@@ -18,6 +18,7 @@ class BiosController < ApplicationController
 
 	def show
 		@bio = current_user.bios.first if signed_in?
+		@user = User.find(1)
 	end
 
 	def edit

@@ -1,4 +1,14 @@
 AlaCon::Application.routes.draw do
+  get "resumes/new"
+
+  get "resumes/edit"
+
+  get "resumes/show"
+
+  get "resumes/destroy"
+
+  get "resumes/create"
+
   get "static_pages/home"
 
   get "users/new"
@@ -8,6 +18,7 @@ AlaCon::Application.routes.draw do
   resources :users
   resources :sessions
   resources :bios
+  resources :resumes
 
   match '/about' => 'static_pages#about'
   match '/contact' => 'static_pages#contact'
@@ -17,6 +28,8 @@ AlaCon::Application.routes.draw do
   match '/signout' => 'sessions#destroy'
   match '/bios/new' => 'bios#new'
   match '/bios/show' => "bios#show"
+  match 'resumes/new' => "resumes#new"
+  match 'resumes/show' => "resumes#show"
 
 
   # The priority is based upon order of creation:
