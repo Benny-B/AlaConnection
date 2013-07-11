@@ -5,7 +5,7 @@
 		<div class="span6 offset3">
  			 <div class="field">
    				 <% if signed_in? %>
-   				 	<%= @resume.url %>
+   				 	<a href="<%= @resume.resume.url %>"> Click to see resume </a>
    				 <% end %>
    			</div> 			
   		</div>

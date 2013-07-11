@@ -18,14 +18,14 @@ class ResumesController < ApplicationController
   end
 
   def show
-    @resume = current_user.resumes.first if signed_in?
+    @resume = current_user.resumes.last if signed_in?
   end
 
   def destroy
   end
 
   def update
-      @resume = current_user.resumes.first if signed_in?
+      @resume = current_user.resumes.last if signed_in?
 
     if @resume.update_attributes(params[:resume])
       flash[:success] = "Resume Updated"
