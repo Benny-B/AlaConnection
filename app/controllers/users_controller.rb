@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   	if @user.save 
   		sign_in @user
-  		flash[:succes] = "Welcome to ALAcon"
+  		flash[:success] = "Welcome to ALAcon"
   		redirect_to @user
   	else
   		render :action => "new"

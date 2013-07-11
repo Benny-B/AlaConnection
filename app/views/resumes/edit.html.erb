@@ -1,2 +1,14 @@
-<h1>Resumes#edit</h1>
-<p>Find me in app/views/resumes/edit.html.erb</p>
+<% provide(:title, "Resume") %>
+<div class="container" id="maincontainer"><%= form_for(@resume) do |f| %>
+	<h1> Edit Your Resume! </h1>
+	<div class="row" >
+		<div class="span6 offset3">
+ 			 <div class="field">
+   				 <%= f.label :resume %><%= f.file_field :resume %></br>
+   				  
+  			</div>
+  			<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+  		</div>
+  	</div>
+  	<% end %>
+  </div>

@@ -28,8 +28,8 @@ AlaCon::Application.routes.draw do
   match '/signout' => 'sessions#destroy'
   match '/bios/new' => 'bios#new'
   match '/bios/show' => "bios#show"
-  match 'resumes/new' => "resumes#new"
-  match 'resumes/show' => "resumes#show"
+  match '/resumes/new' => "resumes#new"
+  match '/resumes/show' => "resumes#show"
 
 
   # The priority is based upon order of creation:

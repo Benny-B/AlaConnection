@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710142040) do
+ActiveRecord::Schema.define(:version => 20130711082811) do
 
   create_table "bios", :force => true do |t|
     t.string   "content"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(:version => 20130710142040) do
   end
 
   add_index "bios", ["user_id", "created_at"], :name => "index_bios_on_user_id_and_created_at"
+
+  create_table "resumes", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
+  end
+
+  add_index "resumes", ["user_id", "created_at"], :name => "index_resumes_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "firstname"

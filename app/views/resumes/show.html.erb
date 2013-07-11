@@ -1,2 +1,13 @@
-<h1>Resumes#show</h1>
-<p>Find me in app/views/resumes/show.html.erb</p>
+<% provide(:title, "Resume") %>
+<div class="container" id="maincontainer">
+	<h1> My Resume! </h1>
+	<div class="row" >
+		<div class="span6 offset3">
+ 			 <div class="field">
+   				 <% if signed_in? %>
+   				 	<%= @resume.url %>
+   				 <% end %>
+   			</div> 			
+  		</div>
+  	</div> 	
+  </div>
