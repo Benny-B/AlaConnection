@@ -7,8 +7,8 @@ development:
   adapter: sqlite3
   database: db/development.sqlite3
   pool: 5
-  access_key_id: AKIAIIQ5DXRT4CGFVWHA
-  secret_access_key: 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
+  access_key_id: [Ask us]
+  secret_access_key: [Ask us]
 
   timeout: 5000
 
@@ -19,14 +19,14 @@ test:
   adapter: sqlite3
   database: db/test.sqlite3
   pool: 5
-  access_key_id: AKIAIIQ5DXRT4CGFVWHA
-  secret_access_key: 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
+  access_key_id: [Ask us]
+  secret_access_key: [Ask us]
   timeout: 5000
 
 production:
   adapter: sqlite3
   database: db/production.sqlite3
   pool: 5
-  access_key_id: AKIAIIQ5DXRT4CGFVWHA
-  secret_access_key: 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
+  access_key_id: [Ask us]
+  secret_access_key: [Ask us]
   timeout: 5000
